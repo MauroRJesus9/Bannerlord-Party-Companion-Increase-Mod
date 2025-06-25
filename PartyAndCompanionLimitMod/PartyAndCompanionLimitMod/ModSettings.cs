@@ -1,0 +1,57 @@
+﻿using MCM.Abstractions.Attributes;
+using MCM.Abstractions.Attributes.v1;
+using MCM.Abstractions.Attributes.v2;
+using MCM.Abstractions.Base.Global;
+using System.ComponentModel;
+using TaleWorlds.Library;
+
+namespace PartyAndCompanionLimitMod
+{
+    public class ModSettings : AttributeGlobalSettings<ModSettings>, INotifyPropertyChanged
+    {
+        public override string Id => "PartyAndCompanionLimitMod";
+        public override string DisplayName => "Party & Companion Limit Mod";
+        public override string FolderName => "PartyAndCompanionLimitMod";
+        public override string FormatType => "json";
+
+        private int _companionBonus = 100;
+
+        [SettingPropertyInteger("Companion Limit Bonus ({=value})", 0, 1000, Order = 0, RequireRestart = false)]
+        [SettingPropertyGroup("Limits")]
+        public int CompanionBonus
+        {
+            get => _companionBonus;
+            set
+            {
+                if (_companionBonus != value)
+                {
+                    _companionBonus = value;
+                    PartyAndCompanionLimitState.CompanionBonus = value;
+                    OnPropertyChanged(nameof(CompanionBonus));
+
+                }
+            }
+        }
+
+        private int _partyBonus = 200;
+
+        [SettingPropertyInteger("Party Size Bonus ({=value})", 0, 1000, Order = 1, RequireRestart = false)]
+        [SettingPropertyGroup("Limits")]
+        public int PartyBonus
+        {
+            get => _partyBonus;
+            set
+            {
+                if (_partyBonus != value)
+                {
+                    _partyBonus = value;
+                    PartyAndCompanionLimitState.PartySizeBonus = value;
+                    OnPropertyChanged(nameof(PartyBonus));
+
+                }
+            }
+        }
+
+
+    }
+}

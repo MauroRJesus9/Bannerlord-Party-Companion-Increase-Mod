@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModuleInfo>
+  <Id value="PartyAndCompanionLimitMod"/>
+  <Version value="v1.0.0"/>
+  <DependedModuleIds>
+    <DependedModuleId value="Native"/>
+    <DependedModuleId value="SandBoxCore"/>
+    <DependedModuleId value="Sandbox"/>
+    <DependedModuleId value="CustomBattle"/>
+    <DependedModuleId value="StoryMode"/>
+  </DependedModuleIds>
+  <Incompatibilities/>
+  <SubModules/>
+</ModuleInfo>

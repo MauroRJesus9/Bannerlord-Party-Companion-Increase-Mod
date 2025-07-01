@@ -10,6 +10,9 @@ namespace PartyAndCompanionLimitMod
     {
         public static int CompanionBonus = 0;
         public static int PartySizeBonus = 0;
+        public static int PrisonerBonus = 0;
+        public static int ClanPartiesBonus = 0;
+        public static int WorkshopBonus = 0;
     }
 
 }

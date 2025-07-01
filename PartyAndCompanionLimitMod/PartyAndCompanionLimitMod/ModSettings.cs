@@ -3,6 +3,7 @@ using MCM.Abstractions.Attributes.v1;
 using MCM.Abstractions.Attributes.v2;
 using MCM.Abstractions.Base.Global;
 using System.ComponentModel;
+using TaleWorlds.CampaignSystem;
 using TaleWorlds.Library;
 
 namespace PartyAndCompanionLimitMod
@@ -16,7 +17,7 @@ namespace PartyAndCompanionLimitMod
 
         private int _companionBonus = 100;
 
-        [SettingPropertyInteger("Companion Limit Bonus ({=value})", 0, 1000, Order = 0, RequireRestart = false)]
+        [SettingPropertyInteger("Companion Limit Bonus :", 0, 10000, Order = 0, RequireRestart = false)]
         [SettingPropertyGroup("Limits")]
         public int CompanionBonus
         {
@@ -35,7 +36,7 @@ namespace PartyAndCompanionLimitMod
 
         private int _partyBonus = 200;
 
-        [SettingPropertyInteger("Party Size Bonus ({=value})", 0, 1000, Order = 1, RequireRestart = false)]
+        [SettingPropertyInteger("Party Size Bonus :", 0, 10000, Order = 1, RequireRestart = false)]
         [SettingPropertyGroup("Limits")]
         public int PartyBonus
         {
@@ -52,6 +53,25 @@ namespace PartyAndCompanionLimitMod
             }
         }
 
+        private int _clanPartiesBonus = 2;
+
+        [SettingPropertyInteger("Clan Parties Limit Bonus :", 0, 100, RequireRestart = false)]
+        [SettingPropertyGroup("Limits")]
+        public int ClanPartiesBonus
+        {
+            get => _clanPartiesBonus;
+            set
+            {
+                if (Campaign.Current != null && _clanPartiesBonus != value && Clan.PlayerClan != null)
+                {
+                    _clanPartiesBonus = value;
+                    PartyAndCompanionLimitState.ClanPartiesBonus = value;
+                    OnPropertyChanged(nameof(ClanPartiesBonus));
+
+                }
+            }
+
+        }
 
     }
 }

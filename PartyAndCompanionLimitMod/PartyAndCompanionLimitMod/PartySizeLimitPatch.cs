@@ -1,4 +1,6 @@
 ﻿using HarmonyLib;
+using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.Library;
 
@@ -15,4 +17,44 @@ namespace PartyAndCompanionLimitMod
             }
         }
     }
+
+    [HarmonyPatch(typeof(Clan), "get_CompanionLimit")]
+    public static class ClanCompanionLimitPatch
+    {
+        public static void Postfix(ref int __result)
+        {
+            __result += PartyAndCompanionLimitState.CompanionBonus;
+        }
+    }
+
+    [HarmonyPatch(typeof(DefaultClanTierModel), "GetPartyLimitForTier")]
+    public static class PartyLimitPatch
+    {
+        public static bool Prefix(Clan clan, int clanTierToCheck, ref int __result)
+        {
+            if (clan == Clan.PlayerClan)
+            {
+                // Valor base padrão do jogo
+                int baseLimit;
+                if (clanTierToCheck < 3)
+                    baseLimit = 1;
+                else if (clanTierToCheck < 5)
+                    baseLimit = 2;
+                else
+                    baseLimit = 3;
+
+                // Aplica o valor extra do slider
+                __result = baseLimit + PartyAndCompanionLimitState.ClanPartiesBonus;
+
+                InformationManager.DisplayMessage(new InformationMessage($"[Mod] Novo limite de parties: {__result}"));
+
+                return false; // Ignora o método original
+            }
+
+            return true; // Usa o método original para outros clãs
+        }
+    }
+
+
+
 }

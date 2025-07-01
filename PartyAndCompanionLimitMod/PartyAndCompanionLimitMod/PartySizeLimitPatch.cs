@@ -2,7 +2,6 @@
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.CampaignSystem.Party;
-using TaleWorlds.Library;
 
 namespace PartyAndCompanionLimitMod
 {
@@ -83,8 +82,15 @@ namespace PartyAndCompanionLimitMod
             // Aplica apenas a parties que NÃO sejam a party do jogador
             if (__instance.MobileParty != null && __instance.MobileParty != MobileParty.MainParty)
             {
-                __result += PartyAndCompanionLimitState.AiPartySizeBonus;
+                var leaderHero = __instance.MobileParty.LeaderHero;
+
+                // Só aplicar a parties lideradas por Lords que não sejam bandidos e não sejam caravanas
+                if (leaderHero != null && !__instance.MobileParty.IsCaravan && !__instance.MobileParty.IsMilitia && !__instance.MobileParty.IsBandit)
+                {
+                    __result += PartyAndCompanionLimitState.AiPartySizeBonus;
+                }
             }
+
         }
     }
 

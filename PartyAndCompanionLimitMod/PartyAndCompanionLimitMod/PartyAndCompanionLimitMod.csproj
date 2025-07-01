@@ -57,7 +57,7 @@
     </Reference>
     <Reference Include="TaleWorlds.CampaignSystem.ViewModelCollection, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\TaleWorlds.CampaignSystem.ViewModelCollection.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\GitHub\Bannerlord-Party-Companion-Increase-Mod\PartyAndCompanionLimitMod\PartyAndCompanionLimitMod\bin\Debug\TaleWorlds.CampaignSystem.ViewModelCollection.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.Core">
       <HintPath>E:\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Core.dll</HintPath>
@@ -71,7 +71,7 @@
     </Reference>
     <Reference Include="TaleWorlds.Localization, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\TaleWorlds.Localization.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\GitHub\Bannerlord-Party-Companion-Increase-Mod - Shokuho\PartyAndCompanionLimitMod\PartyAndCompanionLimitMod\bin\Debug\TaleWorlds.Localization.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.MountAndBlade">
       <HintPath>E:\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.dll</HintPath>

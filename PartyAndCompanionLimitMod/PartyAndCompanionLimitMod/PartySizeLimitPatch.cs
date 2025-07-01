@@ -55,6 +55,15 @@ namespace PartyAndCompanionLimitMod
         }
     }
 
+    [HarmonyPatch(typeof(DefaultWorkshopModel), "GetMaxWorkshopCountForClanTier")]
+    public static class WorkshopLimitPatch
+    {
+        public static void Postfix(int tier, ref int __result)
+        {
+            // O novo limite será o valor original + o bónus do slider
+            __result += PartyAndCompanionLimitState.WorkshopBonus;
 
+        }
+    }
 
 }

@@ -62,7 +62,7 @@ namespace PartyAndCompanionLimitMod
             get => _clanPartiesBonus;
             set
             {
-                if (Campaign.Current != null && _clanPartiesBonus != value && Clan.PlayerClan != null)
+                if (_clanPartiesBonus != value)
                 {
                     _clanPartiesBonus = value;
                     PartyAndCompanionLimitState.ClanPartiesBonus = value;
@@ -89,8 +89,46 @@ namespace PartyAndCompanionLimitMod
                 }
             }
         }
+        private int _prisonerBonus = 0;
+
+        [SettingPropertyInteger("Prisoner Limit Bonus :", 0, 10000, RequireRestart = false)]
+        [SettingPropertyGroup("Limits")]
+        public int PrisonerBonus
+        {
+            get => _prisonerBonus;
+            set
+            {
+                if (_prisonerBonus != value)
+                {
+                    _prisonerBonus = value;
+                    PartyAndCompanionLimitState.PrisonerBonus = value;
+                    OnPropertyChanged(nameof(PrisonerBonus));
+                }
+            }
+        }
+
+        private int _aiPartySizeBonus = 0;
+
+        [SettingPropertyInteger("AI Party Size Bonus :", 0, 10000, RequireRestart = false)]
+        [SettingPropertyGroup("Limits")]
+        public int AiPartySizeBonus
+        {
+            get => _aiPartySizeBonus;
+            set
+            {
+                if (_aiPartySizeBonus != value)
+                {
+                    _aiPartySizeBonus = value;
+                    PartyAndCompanionLimitState.AiPartySizeBonus = value;
+                    OnPropertyChanged(nameof(AiPartySizeBonus));
+                }
+            }
+        }
 
     }
 }
 
-    
+
+
+
+

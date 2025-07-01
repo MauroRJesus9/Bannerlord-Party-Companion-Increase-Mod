@@ -13,6 +13,7 @@ namespace PartyAndCompanionLimitMod
         public static int PrisonerBonus = 0;
         public static int ClanPartiesBonus = 0;
         public static int WorkshopBonus = 0;
+        public static int AiPartySizeBonus = 0;
     }
 
 }

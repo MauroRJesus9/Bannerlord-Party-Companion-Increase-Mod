@@ -46,8 +46,6 @@ namespace PartyAndCompanionLimitMod
                 // Aplica o valor extra do slider
                 __result = baseLimit + PartyAndCompanionLimitState.ClanPartiesBonus;
 
-                InformationManager.DisplayMessage(new InformationMessage($"[Mod] Novo limite de parties: {__result}"));
-
                 return false; // Ignora o método original
             }
 
@@ -65,5 +63,30 @@ namespace PartyAndCompanionLimitMod
 
         }
     }
+
+    [HarmonyPatch(typeof(DefaultPartySizeLimitModel), "GetPartyPrisonerSizeLimit")]
+    public static class PrisonerLimitPatch
+    {
+        public static void Postfix(PartyBase party, ref ExplainedNumber __result)
+        {
+            if (party.MobileParty != null && party.MobileParty == MobileParty.MainParty)
+            {
+                __result.Add(PartyAndCompanionLimitState.PrisonerBonus);
+            }
+        }
+    }
+    [HarmonyPatch(typeof(PartyBase), "get_PartySizeLimit")]
+    public static class AiPartySizeLimitPatch
+    {
+        public static void Postfix(PartyBase __instance, ref int __result)
+        {
+            // Aplica apenas a parties que NÃO sejam a party do jogador
+            if (__instance.MobileParty != null && __instance.MobileParty != MobileParty.MainParty)
+            {
+                __result += PartyAndCompanionLimitState.AiPartySizeBonus;
+            }
+        }
+    }
+
 
 }

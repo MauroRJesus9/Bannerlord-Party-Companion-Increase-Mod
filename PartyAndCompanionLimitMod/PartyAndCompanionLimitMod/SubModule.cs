@@ -17,11 +17,12 @@ namespace PartyAndCompanionLimitMod
             {
                 var harmony = new Harmony("com.iroku.companionandpartylimit");
                 harmony.PatchAll();
-                InformationManager.DisplayMessage(new InformationMessage("[Mod] Harmony patches aplicados com sucesso!"));
+                //InformationManager.DisplayMessage(new InformationMessage("[Mod] Harmony patches aplicados com sucesso!"));
+
             }
             catch (Exception ex)
             {
-                InformationManager.DisplayMessage(new InformationMessage($"[Mod] Erro ao aplicar patch: {ex.Message}"));
+                //InformationManager.DisplayMessage(new InformationMessage($"[Mod] Erro ao aplicar patch: {ex.Message}"));
             }
         }
     }

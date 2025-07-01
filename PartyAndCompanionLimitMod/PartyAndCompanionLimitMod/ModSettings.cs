@@ -15,7 +15,7 @@ namespace PartyAndCompanionLimitMod
         public override string FolderName => "PartyAndCompanionLimitMod";
         public override string FormatType => "json";
 
-        private int _companionBonus = 100;
+        private int _companionBonus = 0;
 
         [SettingPropertyInteger("Companion Limit Bonus :", 0, 10000, Order = 0, RequireRestart = false)]
         [SettingPropertyGroup("Limits")]
@@ -34,7 +34,7 @@ namespace PartyAndCompanionLimitMod
             }
         }
 
-        private int _partyBonus = 200;
+        private int _partyBonus = 0;
 
         [SettingPropertyInteger("Party Size Bonus :", 0, 10000, Order = 1, RequireRestart = false)]
         [SettingPropertyGroup("Limits")]
@@ -53,7 +53,7 @@ namespace PartyAndCompanionLimitMod
             }
         }
 
-        private int _clanPartiesBonus = 2;
+        private int _clanPartiesBonus = 0;
 
         [SettingPropertyInteger("Clan Parties Limit Bonus :", 0, 100, RequireRestart = false)]
         [SettingPropertyGroup("Limits")]
@@ -72,6 +72,25 @@ namespace PartyAndCompanionLimitMod
             }
 
         }
+        private int _workshopBonus = 0;
+
+        [SettingPropertyInteger("Workshop Limit Bonus :", 0, 100, RequireRestart = false)]
+        [SettingPropertyGroup("Limits")]
+        public int WorkshopBonus
+        {
+            get => _workshopBonus;
+            set
+            {
+                if (_workshopBonus != value)
+                {
+                    _workshopBonus = value;
+                    PartyAndCompanionLimitState.WorkshopBonus = value;
+                    OnPropertyChanged(nameof(WorkshopBonus));
+                }
+            }
+        }
 
     }
 }
+
+    

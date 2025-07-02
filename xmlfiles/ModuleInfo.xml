@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModuleInfo>
-  <Id value="PartyAndCompanionLimitMod"/>
-  <Version value="v1.0.0"/>
+  <Id value="PartyAndClanLimitExtender"/>
+  <Version value="v1.1.1"/>
   <DependedModuleIds>
     <DependedModuleId value="Native"/>
     <DependedModuleId value="SandBoxCore"/>
     <DependedModuleId value="Sandbox"/>
     <DependedModuleId value="CustomBattle"/>
     <DependedModuleId value="StoryMode"/>
+    <DependedModule Id="Bannerlord.Harmony"/>
   </DependedModuleIds>
   <Incompatibilities/>
   <SubModules/>

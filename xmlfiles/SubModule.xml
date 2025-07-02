@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-  <Name value="PartyAndCompanionLimitMod" />
-  <Id value="PartyAndCompanionLimitMod" />
-  <Version value="v1.0.0" />
+  <Name value="PartyAndClanLimitExtender" />
+  <Id value="PartyAndClanLimitExtender" />
+  <Version value="v1.1.1" />
   <SingleplayerModule value="true" />
   <MultiplayerModule value="false" />
   <Official value="false" />
   <SubModules>
     <SubModule>
-      <Name value="PartyAndCompanionLimitMod" />
-      <DLLName value="PartyAndCompanionLimitMod.dll" />
-      <SubModuleClassType value="PartyAndCompanionLimitMod.SubModule" />
+      <Name value="PartyAndClanLimitExtender" />
+      <DLLName value="PartyAndClanLimitExtender.dll" />
+      <SubModuleClassType value="PartyAndClanLimitExtender.SubModule" />
       <Tags>
         <Tag key="DedicatedServerType" value="none" />
         <Tag key="IsNoRenderModeElement" value="false"/>

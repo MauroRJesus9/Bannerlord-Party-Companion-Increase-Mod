@@ -4,10 +4,9 @@
 		<!-- Can be found in the URL of your workshop item -->
 	</GetItem>
 	<UpdateItem>
-		<ModuleFolder Value="E:\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\PartyAndCompanionLimitMod"/>
+		<ModuleFolder Value="E:\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\PartyAndClanLimitExtender"/>
 		<!-- A direct path of your module -->	
-		<ChangeNotes Value="1.1.0" />
-		Placeholder
+		<ChangeNotes Value="1.1.1" />
 		<Tags> 
 			<!-- You can use the following tags: -->
 			<!-- Type: Graphical Enhancement, Map Pack, Partial Conversion, Sound, Total Conversion, Troops, UI, Utility, Weapons and Armour -->

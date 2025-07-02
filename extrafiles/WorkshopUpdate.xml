@@ -18,5 +18,6 @@
 			<Tag Value="Singleplayer" />
 			<Tag Value="v1.2.12" />
 		</Tags>
+		<!-- <Image Value="C:\Users\mauro\Documents\GitHub\PartyAndClanLimitExtender\extrafiles\logo.png"/> -->
 	</UpdateItem>
 </Tasks>

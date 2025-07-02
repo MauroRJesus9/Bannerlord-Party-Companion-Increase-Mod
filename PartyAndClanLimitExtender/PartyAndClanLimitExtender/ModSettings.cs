@@ -1,18 +1,15 @@
 ﻿using MCM.Abstractions.Attributes;
-using MCM.Abstractions.Attributes.v1;
 using MCM.Abstractions.Attributes.v2;
 using MCM.Abstractions.Base.Global;
 using System.ComponentModel;
-using TaleWorlds.CampaignSystem;
-using TaleWorlds.Library;
 
-namespace PartyAndCompanionLimitMod
+namespace PartyAndClanLimitExtender
 {
     public class ModSettings : AttributeGlobalSettings<ModSettings>, INotifyPropertyChanged
     {
-        public override string Id => "PartyAndCompanionLimitMod";
-        public override string DisplayName => "Party & Companion Limit Mod";
-        public override string FolderName => "PartyAndCompanionLimitMod";
+        public override string Id => "PartyAndClanLimitExtender";
+        public override string DisplayName => "Party & Clan Limit Extender";
+        public override string FolderName => "PartyAndClanLimitExtender";
         public override string FormatType => "json";
 
         private int _companionBonus = 0;
@@ -27,7 +24,6 @@ namespace PartyAndCompanionLimitMod
                 if (_companionBonus != value)
                 {
                     _companionBonus = value;
-                    PartyAndCompanionLimitState.CompanionBonus = value;
                     OnPropertyChanged(nameof(CompanionBonus));
 
                 }
@@ -46,7 +42,6 @@ namespace PartyAndCompanionLimitMod
                 if (_partyBonus != value)
                 {
                     _partyBonus = value;
-                    PartyAndCompanionLimitState.PartySizeBonus = value;
                     OnPropertyChanged(nameof(PartyBonus));
 
                 }
@@ -65,7 +60,6 @@ namespace PartyAndCompanionLimitMod
                 if (_clanPartiesBonus != value)
                 {
                     _clanPartiesBonus = value;
-                    PartyAndCompanionLimitState.ClanPartiesBonus = value;
                     OnPropertyChanged(nameof(ClanPartiesBonus));
 
                 }
@@ -84,7 +78,6 @@ namespace PartyAndCompanionLimitMod
                 if (_workshopBonus != value)
                 {
                     _workshopBonus = value;
-                    PartyAndCompanionLimitState.WorkshopBonus = value;
                     OnPropertyChanged(nameof(WorkshopBonus));
                 }
             }
@@ -101,7 +94,6 @@ namespace PartyAndCompanionLimitMod
                 if (_prisonerBonus != value)
                 {
                     _prisonerBonus = value;
-                    PartyAndCompanionLimitState.PrisonerBonus = value;
                     OnPropertyChanged(nameof(PrisonerBonus));
                 }
             }
@@ -119,7 +111,6 @@ namespace PartyAndCompanionLimitMod
                 if (_aiPartySizeBonus != value)
                 {
                     _aiPartySizeBonus = value;
-                    PartyAndCompanionLimitState.AiPartySizeBonus = value;
                     OnPropertyChanged(nameof(AiPartySizeBonus));
                 }
             }

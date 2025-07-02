@@ -7,8 +7,8 @@
     <ProjectGuid>{BBF49E1D-2EA7-4C89-9C02-5ABF1F955B8F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PartyAndCompanionLimitMod</RootNamespace>
-    <AssemblyName>PartyAndCompanionLimitMod</AssemblyName>
+    <RootNamespace>PartyAndClanLimitExtender</RootNamespace>
+    <AssemblyName>PartyAndClanLimitExtender</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -57,21 +57,21 @@
     </Reference>
     <Reference Include="TaleWorlds.CampaignSystem.ViewModelCollection, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Documents\GitHub\Bannerlord-Party-Companion-Increase-Mod\PartyAndCompanionLimitMod\PartyAndCompanionLimitMod\bin\Debug\TaleWorlds.CampaignSystem.ViewModelCollection.dll</HintPath>
+      <HintPath>..\..\..\PartyAndClanLimitExtenderShokuho\PartyAndClanLimitExtenderShokuho\PartyAndClanLimitExtenderShokuho\Libraries\TaleWorlds.CampaignSystem.ViewModelCollection.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.Core">
       <HintPath>E:\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Core.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.Core.ViewModelCollection, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\TaleWorlds.Core.ViewModelCollection.dll</HintPath>
+      <HintPath>..\..\..\PartyAndClanLimitExtenderShokuho\PartyAndClanLimitExtenderShokuho\PartyAndClanLimitExtenderShokuho\Libraries\TaleWorlds.Core.ViewModelCollection.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.Library">
       <HintPath>E:\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Library.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.Localization, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Documents\GitHub\Bannerlord-Party-Companion-Increase-Mod - Shokuho\PartyAndCompanionLimitMod\PartyAndCompanionLimitMod\bin\Debug\TaleWorlds.Localization.dll</HintPath>
+      <HintPath>..\..\..\PartyAndClanLimitExtenderShokuho\PartyAndClanLimitExtenderShokuho\PartyAndClanLimitExtenderShokuho\Libraries\TaleWorlds.Localization.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.MountAndBlade">
       <HintPath>E:\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.dll</HintPath>
@@ -82,7 +82,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PartyAndCompanionLimitState.cs" />
     <Compile Include="ModSettings.cs" />
     <Compile Include="PartySizeLimitPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

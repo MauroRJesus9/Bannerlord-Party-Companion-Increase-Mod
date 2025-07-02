@@ -1,9 +1,10 @@
 ﻿using HarmonyLib;
+using MCM.Abstractions.Base.Global;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.CampaignSystem.Party;
 
-namespace PartyAndCompanionLimitMod
+namespace PartyAndClanLimitExtender
 {
     [HarmonyPatch(typeof(PartyBase), "get_PartySizeLimit")]
     public static class PartySizeLimitPatch
@@ -12,7 +13,7 @@ namespace PartyAndCompanionLimitMod
         {
             if (__instance.MobileParty != null && __instance.MobileParty == MobileParty.MainParty)
             {
-                __result += PartyAndCompanionLimitState.PartySizeBonus;
+                __result += GlobalSettings<ModSettings>.Instance.PartyBonus;
             }
         }
     }
@@ -22,7 +23,7 @@ namespace PartyAndCompanionLimitMod
     {
         public static void Postfix(ref int __result)
         {
-            __result += PartyAndCompanionLimitState.CompanionBonus;
+            __result += GlobalSettings<ModSettings>.Instance.CompanionBonus;
         }
     }
 
@@ -33,17 +34,9 @@ namespace PartyAndCompanionLimitMod
         {
             if (clan == Clan.PlayerClan)
             {
-                // Valor base padrão do jogo
-                int baseLimit;
-                if (clanTierToCheck < 3)
-                    baseLimit = 1;
-                else if (clanTierToCheck < 5)
-                    baseLimit = 2;
-                else
-                    baseLimit = 3;
 
                 // Aplica o valor extra do slider
-                __result = baseLimit + PartyAndCompanionLimitState.ClanPartiesBonus;
+                __result += GlobalSettings<ModSettings>.Instance.ClanPartiesBonus;
 
                 return false; // Ignora o método original
             }
@@ -58,7 +51,7 @@ namespace PartyAndCompanionLimitMod
         public static void Postfix(int tier, ref int __result)
         {
             // O novo limite será o valor original + o bónus do slider
-            __result += PartyAndCompanionLimitState.WorkshopBonus;
+            __result += GlobalSettings<ModSettings>.Instance.WorkshopBonus;
 
         }
     }
@@ -70,7 +63,7 @@ namespace PartyAndCompanionLimitMod
         {
             if (party.MobileParty != null && party.MobileParty == MobileParty.MainParty)
             {
-                __result.Add(PartyAndCompanionLimitState.PrisonerBonus);
+                __result.Add(GlobalSettings<ModSettings>.Instance.PrisonerBonus);
             }
         }
     }
@@ -87,7 +80,7 @@ namespace PartyAndCompanionLimitMod
                 // Só aplicar a parties lideradas por Lords que não sejam bandidos e não sejam caravanas
                 if (leaderHero != null && !__instance.MobileParty.IsCaravan && !__instance.MobileParty.IsMilitia && !__instance.MobileParty.IsBandit)
                 {
-                    __result += PartyAndCompanionLimitState.AiPartySizeBonus;
+                    __result += GlobalSettings<ModSettings>.Instance.AiPartySizeBonus;
                 }
             }
 
